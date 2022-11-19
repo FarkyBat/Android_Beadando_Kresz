@@ -13,7 +13,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.android_beadando.quizek.fragmentered;
+import com.example.android_beadando.quizek.képek;
+import com.example.android_beadando.quizek.kérdésválasz;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{ //gombkattintásra implementál
+
+
+
     ImageView kep;
     TextView Kerdesszam;    //kerdesszamlalo
     TextView kerdes;    //maga a kerdes

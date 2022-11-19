@@ -9,10 +9,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.android_beadando.quizek.quizfragment1;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class start extends AppCompatActivity implements View.OnClickListener{
 
     Button start;
 
+    List<String> valaszok = new ArrayList<>();
+    public List<String> getValaszok() {
+        return valaszok;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

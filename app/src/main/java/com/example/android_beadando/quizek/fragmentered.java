@@ -1,4 +1,4 @@
-package com.example.android_beadando;
+package com.example.android_beadando.quizek;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -13,6 +13,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.android_beadando.R;
+import com.example.android_beadando.hibakhoz.hibasvalasz;
+import com.example.android_beadando.quizek.kérdésválasz;
+import com.example.android_beadando.quizek.quizfragment1;
+import com.example.android_beadando.start;
+
 
 public class fragmentered extends Fragment {
     Button ujra;
@@ -21,6 +27,7 @@ public class fragmentered extends Fragment {
     TextView nemsiker;
     TextView eredmeny;
     Activity context;
+    Button hibak;
 
     int pont = quizfragment1.pont;
     int kerdesek = kérdésválasz.kérdés.length;
@@ -32,6 +39,7 @@ public class fragmentered extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_fragmentered, container, false);
 
+        hibak= view.findViewById(R.id.hibak);
         siker = view.findViewById(R.id.siker1);
         nemsiker = view.findViewById(R.id.nemsiker1);
         eredmeny = view.findViewById(R.id.eredm1);
@@ -53,6 +61,16 @@ public class fragmentered extends Fragment {
                 if (gombnyomas.getId() == R.id.kezdo1) {
                     Intent intent = new Intent(context, start.class);
                     startActivity(intent);
+
+                }
+            }
+        });
+        hibak.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Button gombnyomas = (Button) view;
+                if (gombnyomas.getId() == R.id.hibak) {
+                    ujraFragment(new hibasvalasz());
                 }
             }
         });
@@ -65,6 +83,7 @@ public class fragmentered extends Fragment {
                 }
             }
         });
+
 
         return view;
     }

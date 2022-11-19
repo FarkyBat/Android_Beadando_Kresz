@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context=".quizfragment1">
+    tools:context=".quizek.quizfragment1">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/MAIN"

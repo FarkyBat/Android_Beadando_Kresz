@@ -1,4 +1,4 @@
-package com.example.android_beadando;
+package com.example.android_beadando.quizek;
 
 import android.media.Image;
 

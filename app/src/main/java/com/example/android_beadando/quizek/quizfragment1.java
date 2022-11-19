@@ -1,10 +1,9 @@
-package com.example.android_beadando;
+package com.example.android_beadando.quizek;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
+
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 
@@ -15,6 +14,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.android_beadando.R;
+import com.example.android_beadando.start;
+
+import java.util.List;
+
 
 public class quizfragment1 extends Fragment implements View.OnClickListener{
     ImageView kep;
@@ -24,8 +28,8 @@ public class quizfragment1 extends Fragment implements View.OnClickListener{
     Button next;
     Button next2;//tovább gomb
     Button segitseg;
-    String status = "";
 
+    public static String[] valaszok;
     int i1=0;
     int i = 0;
     public static int pont = 0;   //pontszámláló helyes válaszonként hozzá lesz adva egy pont.
@@ -33,12 +37,12 @@ public class quizfragment1 extends Fragment implements View.OnClickListener{
     int kerdesI = 0;    //kérdésszámláló. amikor a nextre nyomunk hozzáad egyet.
     String valasz = ""; //a bejelölt válasz
 
-    képek p1 = new képek(R.drawable.eloznitilos);
-    képek p2 = new képek(R.drawable.sebkorlatoz);
-    képek p3 = new képek(R.drawable.foutvonalvege);
-    képek p4 = new képek(R.drawable.kanyarodofoutvonal);
+    public static képek p1 = new képek(R.drawable.eloznitilos);
+    public static képek p2 = new képek(R.drawable.sebkorlatoz);
+    public static képek p3 = new képek(R.drawable.foutvonalvege);
+    public static képek p4 = new képek(R.drawable.kanyarodofoutvonal);
 
-    képek [] kepektomb = new képek[]{
+    public static képek [] kepektomb = new képek[]{
             p1, p2, p3, p4
     };
 
@@ -140,7 +144,10 @@ public class quizfragment1 extends Fragment implements View.OnClickListener{
         if (gombnyomas.getId()==R.id.next){ //ha megnyomjuk a next gombot,////////////////////
             if(valasz.equals(kérdésválasz.helyesvalasz[kerdesI])){
                 pont++;
+              //  valasz=kérdésválasz.helyesvalasz[kerdesI];
+
             }
+
             kerdesI++;//számlálóhoz hozzáad egyet
             Kerdesszam.setText((kerdesI+1)+"/50");
             koviKerdes();//betölti a következő kérdést
@@ -148,8 +155,10 @@ public class quizfragment1 extends Fragment implements View.OnClickListener{
 
         }else {
             valasz = gombnyomas.getText().toString();
+            List<String> valaszok = ((start)getActivity()).getValaszok();
+            valaszok.add(valasz);
             gombnyomas.setBackgroundColor(Color.BLUE);
-
+           //valaszok[kerdesI]=valasz;
         }
 
 
