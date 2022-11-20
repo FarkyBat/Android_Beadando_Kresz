@@ -1,10 +1,5 @@
 package com.example.android_beadando;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.app.AlertDialog;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -12,6 +7,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.android_beadando.quizek.fragmentered;
 import com.example.android_beadando.quizek.képek;
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button gombnyomas = (Button) view;
 
-        if (gombnyomas.getId()==R.id.segitseg){//ha megnyomtuk a gombot, akkor:
+        if (gombnyomas.getId()== R.id.segitseg){//ha megnyomtuk a gombot, akkor:
 
             next2.setVisibility(View.VISIBLE);
             next.setVisibility(View.INVISIBLE);
@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         }
 
-        if(gombnyomas.getId()==R.id.next2){
+        if(gombnyomas.getId()== R.id.next2){
             kerdesI++;
             Kerdesszam.setText((kerdesI+1)+"/50");
             koviKerdes();
@@ -145,7 +145,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
 
-        if (gombnyomas.getId()==R.id.next){ //ha megnyomjuk a next gombot,////////////////////
+        if (gombnyomas.getId()== R.id.next){ //ha megnyomjuk a next gombot,////////////////////
             if(valasz.equals(kérdésválasz.helyesvalasz[kerdesI])){
                 pont++;
             }

@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class start extends AppCompatActivity implements View.OnClickListener{
-
+    Button eredmenyeid;
     Button start;
 
     List<String> valaszok = new ArrayList<>();
@@ -23,25 +23,36 @@ public class start extends AppCompatActivity implements View.OnClickListener{
         return valaszok;
     }
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
 
+
+        eredmenyeid=findViewById(R.id.eredmenyeid);
         start=findViewById(R.id.start);
+        eredmenyeid.setOnClickListener(this);
         start.setOnClickListener(this);
     }
-
     @Override
     public void onClick(View view) {
         Button gombnyomas = (Button) view;
         if (gombnyomas.getId()==R.id.start){
             start.setVisibility(View.INVISIBLE);
-            loadFragment(new quizfragment1());
+            eredmenyeid.setVisibility(View.INVISIBLE);
+            loadFragment(new kvizek());
+        }
+
+        if (gombnyomas.getId()==R.id.eredmenyeid){
+            start.setVisibility(View.INVISIBLE);
+            eredmenyeid.setVisibility(View.INVISIBLE);
+            loadFragment(new osszeredmeny());
         }
 
     }
-     public void loadFragment(Fragment fragment) {
+    public void loadFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.start1, fragment);
@@ -49,5 +60,6 @@ public class start extends AppCompatActivity implements View.OnClickListener{
 
         transaction.commit();
     }
+
 
 }

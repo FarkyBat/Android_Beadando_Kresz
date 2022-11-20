@@ -3,20 +3,17 @@ package com.example.android_beadando.quizek;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
 import com.example.android_beadando.R;
 import com.example.android_beadando.hibakhoz.hibasvalasz;
-import com.example.android_beadando.quizek.kérdésválasz;
-import com.example.android_beadando.quizek.quizfragment1;
 import com.example.android_beadando.start;
 
 
@@ -50,6 +47,7 @@ public class fragmentered extends Fragment {
         if (quizfragment1.pont > quizfragment1.kerdesek * 0.60) {
             siker.setVisibility(View.VISIBLE);
             eredmeny.setText("Elért pontszámod: " + pont + "a " + kerdesek + "-ból");
+
         } else {
             nemsiker.setVisibility(View.VISIBLE);
             eredmeny.setText("Elért pontszámod: " + pont + "a " + kerdesek + "-ból");
@@ -93,9 +91,6 @@ public class fragmentered extends Fragment {
         fragmentManager.replace(R.id.start1, fragment).commit();
 
     }
-
-
-
 
 
 }

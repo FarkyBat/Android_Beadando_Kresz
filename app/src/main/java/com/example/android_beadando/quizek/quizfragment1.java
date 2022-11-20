@@ -2,17 +2,15 @@ package com.example.android_beadando.quizek;
 
 import android.graphics.Color;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.android_beadando.R;
 import com.example.android_beadando.start;
@@ -144,7 +142,7 @@ public class quizfragment1 extends Fragment implements View.OnClickListener{
         if (gombnyomas.getId()==R.id.next){ //ha megnyomjuk a next gombot,////////////////////
             if(valasz.equals(kérdésválasz.helyesvalasz[kerdesI])){
                 pont++;
-              //  valasz=kérdésválasz.helyesvalasz[kerdesI];
+                //  valasz=kérdésválasz.helyesvalasz[kerdesI];
 
             }
 
@@ -158,7 +156,7 @@ public class quizfragment1 extends Fragment implements View.OnClickListener{
             List<String> valaszok = ((start)getActivity()).getValaszok();
             valaszok.add(valasz);
             gombnyomas.setBackgroundColor(Color.BLUE);
-           //valaszok[kerdesI]=valasz;
+            //valaszok[kerdesI]=valasz;
         }
 
 
@@ -178,13 +176,13 @@ public class quizfragment1 extends Fragment implements View.OnClickListener{
         d.setText(kérdésválasz.valaszlehetoseg[kerdesI][3]);
     }
 
-   /* public void setFragment(FragmentManager fragmentManager, Fragment fragment){
-        FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.setReorderingAllowed(true);
-        transaction.replace(R.id.eredmeny, fragment, null);
-        transaction.addToBackStack(null).commit();
-    }*/
-   public void loadFragment(Fragment eredmeny) {
+    /* public void setFragment(FragmentManager fragmentManager, Fragment fragment){
+         FragmentTransaction transaction = fragmentManager.beginTransaction();
+         transaction.setReorderingAllowed(true);
+         transaction.replace(R.id.eredmeny, fragment, null);
+         transaction.addToBackStack(null).commit();
+     }*/
+    public void loadFragment(Fragment eredmeny) {
 
         FragmentTransaction fragmentManager = getActivity().getSupportFragmentManager().beginTransaction();
         fragmentManager.replace(R.id.start1, eredmeny).commit();

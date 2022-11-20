@@ -18,7 +18,7 @@ public class Myadapter extends RecyclerView.Adapter<Myadapter.MyViewHolder> {
     private hibasvalasz fragment;
     private List<hibak> hibaklist;
 
-    public Myadapter(List<hibak> hibaklist, hibasvalasz fragment) { //Beletesszük a paraméterbe a listát és a fragmentet hogy meglegyen a kommunikáció.
+    public Myadapter(List<hibak> hibaklist, hibasvalasz fragment) { //Beletesszük a paraméterbe a listát és a fragmentet hogy meglegyen a kommunik
         this.hibaklist = hibaklist;
         this.fragment = fragment;
     }
@@ -36,7 +36,7 @@ public class Myadapter extends RecyclerView.Adapter<Myadapter.MyViewHolder> {
 
         hibak hibak = hibaklist.get(position);
         holder.kerdes.setText(hibak.getKerdes());
-        holder.valasz.setText(hibak.getValasz()); //Ha itt
+        holder.valasz.setText(hibak.getValasz());
         holder.helyesvalasz.setText(hibak.getHelyesvalasz());
 
     }
