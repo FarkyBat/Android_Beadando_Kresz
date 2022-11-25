@@ -1,15 +1,14 @@
 package com.example.android_beadando;
 
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-
-import com.example.android_beadando.quizek.quizfragment1;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,11 +16,21 @@ import java.util.List;
 public class start extends AppCompatActivity implements View.OnClickListener{
     Button eredmenyeid;
     Button start;
-
+    ImageView Hatter;
     List<String> valaszok = new ArrayList<>();
     public List<String> getValaszok() {
         return valaszok;
     }
+    public List<Integer> correctfalse = new ArrayList<>();
+    public  List<Integer> getCorrectfalse() {
+        return correctfalse;
+    }
+    public List<Integer> kreszkepek = new ArrayList<>();
+    public List<Integer> getKreszkepek() {
+        return kreszkepek;
+    }
+    public static int besteredmeny1=0;
+    public static int getBesteredmeny1(){return besteredmeny1; }
 
 
 
@@ -30,11 +39,12 @@ public class start extends AppCompatActivity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
 
-
+        Hatter=findViewById(R.id.imageView2);
         eredmenyeid=findViewById(R.id.eredmenyeid);
         start=findViewById(R.id.start);
         eredmenyeid.setOnClickListener(this);
         start.setOnClickListener(this);
+
     }
     @Override
     public void onClick(View view) {
@@ -43,6 +53,7 @@ public class start extends AppCompatActivity implements View.OnClickListener{
             start.setVisibility(View.INVISIBLE);
             eredmenyeid.setVisibility(View.INVISIBLE);
             loadFragment(new kvizek());
+            Hatter.setVisibility(View.INVISIBLE);
         }
 
         if (gombnyomas.getId()==R.id.eredmenyeid){

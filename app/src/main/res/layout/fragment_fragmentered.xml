@@ -54,44 +54,35 @@
             app:layout_constraintTop_toBottomOf="@+id/siker1" />
 
         <Button
-            android:id="@+id/retry1"
+            android:id="@+id/hibak"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="300dp"
-            android:layout_marginEnd="20dp"
-            android:height="60dp"
-            android:backgroundTint="@color/material_dynamic_primary70"
-            android:text="Újrapróbálom"
+            android:layout_marginTop="50dp"
+            android:text="Hibasvalasz"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/eredm1" />
+
+        <Button
+            android:id="@+id/retry1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="76dp"
+            android:text="Újrapróbálom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hibak" />
 
         <Button
             android:id="@+id/kezdo1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="30dp"
-            android:height="50dp"
-            android:backgroundTint="@color/material_dynamic_primary70"
+            android:layout_marginTop="172dp"
             android:text="kezdőlap"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/retry1" />
 
-        <Button
-            android:id="@+id/hibak"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="100dp"
-            android:layout_marginEnd="20dp"
-            android:backgroundTint="@color/material_dynamic_primary70"
-            android:text="Rossz válaszok"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/eredm1" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

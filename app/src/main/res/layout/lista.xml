@@ -14,13 +14,14 @@
         android:id="@+id/kerdes"
         android:layout_width="0dp"
         android:layout_height="26dp"
+        android:layout_marginStart="60dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="5dp"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/valasz"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/correctfalse"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,13 +29,13 @@
         android:id="@+id/valasz"
         android:layout_width="0dp"
         android:layout_height="26dp"
+        android:layout_marginStart="60dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/helyesvalasz"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.656"
+        app:layout_constraintEnd_toStartOf="@+id/correctfalse"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/kerdes" />
 
@@ -42,14 +43,37 @@
         android:id="@+id/helyesvalasz"
         android:layout_width="0dp"
         android:layout_height="26dp"
+        android:layout_marginStart="60dp"
         android:layout_marginTop="5dp"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/correctfalse"
         app:layout_constraintHorizontal_bias="0.609"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/valasz"
         app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/correctfalse"
+        android:layout_width="54dp"
+        android:layout_height="49dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.538"
+        app:srcCompat="@android:drawable/ic_delete" />
+
+    <ImageView
+        android:id="@+id/kreszkep"
+        android:layout_width="74dp"
+        android:layout_height="76dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/valasz"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.714"
+        app:srcCompat="@drawable/eloznitilos" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

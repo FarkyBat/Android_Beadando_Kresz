@@ -36,6 +36,7 @@ public class fragmentered extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_fragmentered, container, false);
 
+
         hibak= view.findViewById(R.id.hibak);
         siker = view.findViewById(R.id.siker1);
         nemsiker = view.findViewById(R.id.nemsiker1);
@@ -43,6 +44,14 @@ public class fragmentered extends Fragment {
         ujra = view.findViewById(R.id.retry1);
         kezdo = view.findViewById(R.id.kezdo1);
         context=getActivity();
+
+        int besteredmeny1=((start)getActivity()).getBesteredmeny1();
+
+        if(quizfragment1.pont>besteredmeny1){
+            besteredmeny1=quizfragment1.pont;
+
+        }
+
 
         if (quizfragment1.pont > quizfragment1.kerdesek * 0.60) {
             siker.setVisibility(View.VISIBLE);

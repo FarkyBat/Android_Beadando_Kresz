@@ -5,7 +5,7 @@
     android:id="@+id/start1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img_5"
+    android:background="@color/white"
     tools:context=".start">
 
     <Button
@@ -33,5 +33,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TextContrastCheck" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="416dp"
+        android:layout_height="727dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img_5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,12 +1,6 @@
 package com.example.android_beadando.quizek;
 
-import android.media.Image;
-
 public class kérdésválasz {
-
-
-
-
 
     public static String kérdés[] = {
             "Nevezd meg a fent látható táblát.",

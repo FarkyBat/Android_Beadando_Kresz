@@ -48,7 +48,11 @@ public class quizfragment1 extends Fragment implements View.OnClickListener{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view =inflater.inflate(R.layout.fragment_quizfragment1, container, false);
-
+        List<Integer> kreszkepek=((start)getActivity()).getKreszkepek();
+        kreszkepek.add(R.drawable.eloznitilos);
+        kreszkepek.add(R.drawable.sebkorlatoz);
+        kreszkepek.add(R.drawable.foutvonalvege);
+        kreszkepek.add(R.drawable.kanyarodofoutvonal);
         kep = view.findViewById(R.id.imageView);
         Kerdesszam = view.findViewById(R.id.kerdesszam);
         kerdes = view.findViewById(R.id.kerdes);
@@ -82,7 +86,7 @@ public class quizfragment1 extends Fragment implements View.OnClickListener{
         next2.setOnClickListener(this);
 
         Kerdesszam.setText((kerdesI+1)+"/50");
-
+        next.setEnabled(false);
         return view;
     }
 
@@ -96,6 +100,13 @@ public class quizfragment1 extends Fragment implements View.OnClickListener{
         Button gombnyomas = (Button) view;
 
         if (gombnyomas.getId()==R.id.segitseg){//ha megnyomtuk a gombot, akkor:
+
+
+            a.setEnabled(false);
+            b.setEnabled(false);
+            c.setEnabled(false);
+            d.setEnabled(false);
+
 
             next2.setVisibility(View.VISIBLE);
             next.setVisibility(View.INVISIBLE);
@@ -130,28 +141,45 @@ public class quizfragment1 extends Fragment implements View.OnClickListener{
         }
 
         if(gombnyomas.getId()==R.id.next2){
+            a.setEnabled(true);
+            b.setEnabled(true);
+            c.setEnabled(true);
+            d.setEnabled(true);
+            valasz = "Segítséggel: "+kérdésválasz.helyesvalasz[kerdesI];
+            List<String> valaszok = ((start)getActivity()).getValaszok();
+            valaszok.add(valasz);
+            List<Integer> correctfalse =((start)getActivity()).getCorrectfalse();
+            correctfalse.add(R.drawable.cross);
+
             kerdesI++;
             Kerdesszam.setText((kerdesI+1)+"/50");
             koviKerdes();
             next.setVisibility(View.VISIBLE);
             next2.setVisibility(View.INVISIBLE);
 
+
         }
 
-
         if (gombnyomas.getId()==R.id.next){ //ha megnyomjuk a next gombot,////////////////////
+            next.setEnabled(false);
             if(valasz.equals(kérdésválasz.helyesvalasz[kerdesI])){
                 pont++;
                 //  valasz=kérdésválasz.helyesvalasz[kerdesI];
-
+                List<Integer> correctfalse =((start)getActivity()).getCorrectfalse();
+                correctfalse.add(R.drawable.correct);
+            }else if(valasz!=kérdésválasz.helyesvalasz[kerdesI]){
+                List<Integer> correctfalse =((start)getActivity()).getCorrectfalse();
+                correctfalse.add(R.drawable.cross);
             }
+
 
             kerdesI++;//számlálóhoz hozzáad egyet
             Kerdesszam.setText((kerdesI+1)+"/50");
             koviKerdes();//betölti a következő kérdést
 
 
-        }else {
+        }else if(gombnyomas.getId()==R.id.a || gombnyomas.getId()==R.id.b || gombnyomas.getId()==R.id.c || gombnyomas.getId()==R.id.d){
+            next.setEnabled(true);
             valasz = gombnyomas.getText().toString();
             List<String> valaszok = ((start)getActivity()).getValaszok();
             valaszok.add(valasz);
