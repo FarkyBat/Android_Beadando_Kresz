@@ -13,11 +13,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.android_beadando.R;
-import com.example.android_beadando.hibakhoz.hibasvalasz;
+import com.example.android_beadando.hibakhoz.hibasvalasz2;
 import com.example.android_beadando.start;
 
+public class fragmentered2 extends Fragment {
 
-public class fragmentered extends Fragment {
     Button osszeredmeny;
     Button ujra;
     Button kezdo;
@@ -27,8 +27,8 @@ public class fragmentered extends Fragment {
     Activity context;
     Button hibak;
 
-    int pont = quizfragment1.pont;
-    int kerdesek = kérdésválasz.kérdés.length;
+    int pont = quizfragment2.pont;
+    int kerdesek = kerdesvalasz2.kérdés.length;
 
     public static int besteredmeny1;
     @Override
@@ -48,13 +48,13 @@ public class fragmentered extends Fragment {
 
         besteredmeny1=((start)getActivity()).getBesteredmeny1();
 
-        if(quizfragment1.pont>besteredmeny1){
-            int elertpont=quizfragment1.pont;
-           start.setBesteredmeny1(elertpont);
+        if(quizfragment2.pont>besteredmeny1){
+            int elertpont=quizfragment2.pont;
+            start.setBesteredmeny1(elertpont);
         }
 
 
-        if (quizfragment1.pont > quizfragment1.kerdesek * 0.60) {
+        if (quizfragment2.pont > quizfragment2.kerdesek * 0.60) {
             siker.setVisibility(View.VISIBLE);
             eredmeny.setText("Elért pontszámod: " + pont + "a " + kerdesek + "-ból");
 
@@ -78,7 +78,7 @@ public class fragmentered extends Fragment {
             public void onClick(View view) {
                 Button gombnyomas = (Button) view;
                 if (gombnyomas.getId() == R.id.hibak) {
-                    ujraFragment(new hibasvalasz());
+                    ujraFragment(new hibasvalasz2());
                 }
             }
         });
@@ -87,7 +87,7 @@ public class fragmentered extends Fragment {
             public void onClick(View view) {
                 Button gombnyomas = (Button) view;
                 if (gombnyomas.getId() == R.id.retry1) {
-                    ujraFragment(new quizfragment1());
+                    ujraFragment(new quizfragment2());
                 }
             }
         });
@@ -102,6 +102,4 @@ public class fragmentered extends Fragment {
         fragmentManager.replace(R.id.start1, fragment).commit();
 
     }
-
-
 }

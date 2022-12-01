@@ -29,10 +29,14 @@ public class start extends AppCompatActivity implements View.OnClickListener{
     public List<Integer> getKreszkepek() {
         return kreszkepek;
     }
+
     public static int besteredmeny1=0;
-    public static int getBesteredmeny1(){return besteredmeny1; }
-
-
+    public int getBesteredmeny1() {
+        return besteredmeny1;
+    }
+    public static void setBesteredmeny1(int besteredmeny) {
+        besteredmeny1 = besteredmeny;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

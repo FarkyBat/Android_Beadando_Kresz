@@ -9,24 +9,27 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
 public class osszeredmeny extends Fragment {
-    TextView ossz;
-    TextView szoveg;
-    TextView osszeredmeny1;
 
-    @Override
+    TextView kiszamolt;
+
+    int szam;
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
 
-
-
-
-        // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_osszeredmeny, container, false);
-        ossz=view.findViewById(R.id.ossz);
-        szoveg=view.findViewById(R.id.szoveg);
-        osszeredmeny1=view.findViewById(R.id.osszeredmeny1);
-        osszeredmeny1.setText(((start)getActivity()).getBesteredmeny1());
+
+        kiszamolt=view.findViewById(R.id.kiszamolt);
+        szam+=((start)getActivity()).getBesteredmeny1();
+
+        if (szam==0){
+            kiszamolt.setText("0");
+        }else if(szam>0){kiszamolt.setText(szam);}
+
+
+
+
+
+
 
 
         return view;

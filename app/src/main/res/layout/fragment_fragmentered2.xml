@@ -33,7 +33,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="40dp"
             android:layout_marginEnd="30dp"
-            android:text="Ez most nem sikerült, Próbáld újra."
+            android:text="Gratulálok, analfabéta vagy próbáld újra te köptyűrő"
             android:textSize="20sp"
             android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"

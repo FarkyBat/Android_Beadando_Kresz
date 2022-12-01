@@ -13,27 +13,27 @@ import com.example.android_beadando.R;
 
 import java.util.List;
 
-public class Myadapter extends RecyclerView.Adapter<Myadapter.MyViewHolder> {
+public class Myadapter2 extends RecyclerView.Adapter<Myadapter2.MyViewHolder> {
 
-    private hibasvalasz fragment;
+    private hibasvalasz2 fragment;
     private List<hibak> hibaklist;
     private List<Integer> correctfalse;
     private List<String> valaszlista;// a startból
     private List<Integer> kreszkeplista;
 
 
-    public Myadapter(List<hibak> hibaklist, List<String> valaszlista, List<Integer> correctfalse,
-                     List<Integer> kreszkeplista, hibasvalasz fragment) { //Beletesszük a paraméterbe a listát és a fragmentet hogy meglegyen a kommunik
+    public Myadapter2(List<hibak> hibaklist, List<String> valaszlista, List<Integer> correctfalse,
+                      List<Integer> kreszkeplista, hibasvalasz2 fragment) { //Beletesszük a paraméterbe a listát és a fragmentet hogy meglegyen a kommunik
         this.hibaklist = hibaklist;
         this.valaszlista=valaszlista;
         this.correctfalse=correctfalse;
         this.kreszkeplista =kreszkeplista;
-        this.fragment = fragment;
+        this.fragment=fragment;
 
     }
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public Myadapter2.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.lista, parent,false);
@@ -41,7 +41,7 @@ public class Myadapter extends RecyclerView.Adapter<Myadapter.MyViewHolder> {
         return new MyViewHolder(itemView);
     }
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull Myadapter2.MyViewHolder holder, int position) {
         Integer kreszkep=kreszkeplista.get(position);
         Integer kep= correctfalse.get(position);
         String valasz= valaszlista.get(position);
